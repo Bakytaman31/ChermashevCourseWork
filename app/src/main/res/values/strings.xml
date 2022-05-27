@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ала-Арча</string>
+    <string name="ala_archa">Ала-Арча</string>
+    <string name="input_name">Введите имя</string>
+    <string name="input_email">Введите почту</string>
+    <string name="input_password">Введите пароль</string>
+    <string name="register_button">ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="login_button">ВОЙТИ</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="forgot_password">Забыли пароль?</string>
+</resources>

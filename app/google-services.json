@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "140476653989",
+    "firebase_url": "https://ala-archa-default-rtdb.firebaseio.com",
+    "project_id": "ala-archa",
+    "storage_bucket": "ala-archa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140476653989:android:1d81ea811f20582908084c",
+        "android_client_info": {
+          "package_name": "com.company.alaArcha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140476653989-o29f6prm5672o3sdjsku1pdpdj5qeab1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClFNsCPqPlmC6JBh71veTx7fRYuX9jyyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140476653989-o29f6prm5672o3sdjsku1pdpdj5qeab1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140476653989:android:a7fc2fcd3ad1543408084c",
+        "android_client_info": {
+          "package_name": "com.example.alaarcha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140476653989-o29f6prm5672o3sdjsku1pdpdj5qeab1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClFNsCPqPlmC6JBh71veTx7fRYuX9jyyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140476653989-o29f6prm5672o3sdjsku1pdpdj5qeab1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
