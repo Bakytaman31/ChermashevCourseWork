@@ -8,4 +8,7 @@
     <string name="login_button">ВОЙТИ</string>
     <string name="register">Зарегистрироваться</string>
     <string name="forgot_password">Забыли пароль?</string>
+    <string name="change_password">СМЕНИТЬ ПАРОЛЬ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>>
 </resources>

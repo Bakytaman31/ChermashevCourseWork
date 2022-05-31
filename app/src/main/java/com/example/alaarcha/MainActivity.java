@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView register;
+    private TextView register, forgotPass;
     private EditText editEmailText, editPasswordText;
     private Button signIn;
 
@@ -33,16 +33,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        register = (TextView) findViewById(R.id.register);
+        register = findViewById(R.id.register);
         register.setOnClickListener(this);
 
-        signIn = (Button) findViewById(R.id.signIn);
+        signIn = findViewById(R.id.signIn);
         signIn.setOnClickListener(this);
         
-        editEmailText = (EditText) findViewById(R.id.email);
-        editPasswordText = (EditText) findViewById(R.id.password);
+        editEmailText = findViewById(R.id.email);
+        editPasswordText = findViewById(R.id.password);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        forgotPass = findViewById(R.id.forgotPassword);
+        forgotPass.setOnClickListener(this);
+
+        progressBar = findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.signIn:
                 userLogin();
+                break;
+            case R.id.forgotPassword:
+                startActivity(new Intent(this, ResetPassword.class));
                 break;
         }
     }
@@ -87,25 +93,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-//        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
 
-                if (task.isSuccessful()) {
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (task.isSuccessful()) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    if (user.isEmailVerified()) {
-                        startActivity(new Intent(MainActivity.this, Profile.class));
-                    } else {
-                        user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this, "Проверьте почту", Toast.LENGTH_LONG).show();
-                    }
+                if (user.isEmailVerified()) {
+                    startActivity(new Intent(MainActivity.this, Profile.class));
                 } else {
-                Toast.makeText(MainActivity.this, "Неправильный логин или пароль", Toast.LENGTH_LONG).show();
-            }
-            }
+                    user.sendEmailVerification();
+                    Toast.makeText(MainActivity.this, "Проверьте почту", Toast.LENGTH_LONG).show();
+                }
+            } else {
+            Toast.makeText(MainActivity.this, "Неправильный логин или пароль", Toast.LENGTH_LONG).show();
+        }
+            progressBar.setVisibility(View.GONE);
         });
 
     }
